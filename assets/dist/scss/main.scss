@@ -274,8 +274,66 @@ h5.author{
     color: #ff0000; 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 576px) {
+
     .input-group {
+        display: flex;
         flex-direction: column;
     }
+    
+    .btn-input{
+        max-width: auto;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        
+    
+    }
+    
+    #category-label{
+        font-size: 75px;
+        text-align: center;
+    }
+    
+    #category-box{
+        position:relative;
+        width: 400px;
+        height: 40px;
+        border-color: red;
+        border-radius: 5px;
+        margin-right:20px;
+        font-size: large;
+        padding-left: 10px;
+    }
+    
+    
+    
+    
+    .clear-btn {
+        position:absolute;
+        padding-left: 320px;
+        margin-top: 20px;
+        transform: translateY(-50%);
+        font-size: 18px;
+        color: #aaa;
+        cursor: pointer;
+        visibility: hidden; 
+    }
+    
+    #category-box:focus + .clear-btn {
+        visibility: visible;  /* Mostra la "X" quando il campo è attivo */
+    }
+    
+    
+    #submit-btn{
+        transform: scale(1.4);
+        text-align: center;
+        border-color: red;
+        border-radius: 5px;
+        padding: 4px;
+        cursor: pointer;
+    }
+    
+
+
 }
