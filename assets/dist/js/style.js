@@ -95,30 +95,9 @@ function update(t) {
 function setupCanvas(){
     canvas.width = window.innerWidth ;
     canvas.height = window.innerHeight;
-    // canvas.style.position = 'fixed';  // Add this line
-    // canvas.style.top = '0';           // Ensures it stays at top
-    // canvas.style.left = '0';          // Ensures it covers entire width
-    // canvas.style.zIndex = '-1';
     console.log('Esecuzione di setupCanvas...');
 
 }
 
 window.addEventListener("resize", setupCanvas);
 
-// setInterval(() => {
-//     // console.log(`Canvas width: ${canvas.width}, height: ${canvas.height}`);
-//     console.log('Esecuzione di setupCanvas...');
-//     setupCanvas()
-// }, 10000);
-
-// const observer = new MutationObserver((mutations) => {
-//     mutations.forEach((mutation) => {
-//         if (mutation.type === 'childList') {
-//             setupCanvas();
-//         }
-//     });
-// });
-
-// observer.observe(document.getElementById('books-container'), {
-//     childList: true
-// });

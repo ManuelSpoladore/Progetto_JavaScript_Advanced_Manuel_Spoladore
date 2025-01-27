@@ -2,13 +2,8 @@
 
 const submitBtn = document.getElementById("submit-btn");
 
-// const inputValue = categoryBox.value.toLowerCase();
 
 let inputValue = ''
-
-// OL31754751M
-//${search}
-// const response = await fetch(`https://openlibrary.org/subjects/`+`fantasy`+`.json`);
 
 async function getBooks(){
     try {
@@ -111,7 +106,6 @@ function createBooks(books) {
                 
                 const description = document.createElement("p");
                 description.classList.add("single-title");
-                // description.textContent = `Descrizione: ${item.works.key}`;
 
                 const singleDetails = document.createElement("h5")
                 singleDetails.textContent = `${item.title} - ${item.authors?.[0]?.name || "Autore sconosciuto"}`
@@ -170,8 +164,5 @@ submitBtn.addEventListener('click',async (e) => {
 
 
 
-setTimeout(() => {
-    console.log(inputValue)
-}, 10000);
 
 
