@@ -95,8 +95,6 @@ function update(t) {
 function setupCanvas(){
     canvas.width = window.innerWidth ;
     canvas.height = window.innerHeight;
-    console.log('Esecuzione di setupCanvas...');
-
 }
 
 window.addEventListener("resize", setupCanvas);
