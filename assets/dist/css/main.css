@@ -266,7 +266,7 @@ h5.author {
   color: #ff0000;
 }
 
-@media (min-width: 576px) {
+@media (max-width: 600px) {
   .header {
     padding: 2em;
   }
