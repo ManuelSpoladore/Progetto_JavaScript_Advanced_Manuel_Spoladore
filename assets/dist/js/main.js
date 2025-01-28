@@ -71,9 +71,9 @@ function createBooks(books) {
             img.setAttribute("alt", item.title || "Copertina non disponibile");
             img.classList.add('cover-book')
             if (item.cover_id) {
-            img.src = `https://covers.openlibrary.org/b/id/`+`${item.cover_id}`+`-M.jpg`; // Dimensione Media
+            img.src = `https://covers.openlibrary.org/b/id/`+`${item.cover_id}`+`-M.jpg`; 
             } else {
-                img.src = 'https://via.placeholder.com/150x200?text=Nessuna+Immagine'; // Placeholder se non c'è copertina
+                img.src = 'https://via.placeholder.com/150x200?text=Nessuna+Immagine';
             }
 
             
@@ -87,7 +87,6 @@ function createBooks(books) {
 
             
             div.addEventListener('click', async () => {
-                console.log("test click")
 
                 if (document.querySelector('.description-overlay')) {
                     return; 
@@ -152,7 +151,6 @@ submitBtn.addEventListener('click',async (e) => {
     try {
         const categoryBox = document.getElementById("category-box");
         inputValue = categoryBox.value.toLowerCase().trim().split(" ").join("_");
-        console.log(inputValue)
         const books = await getBooks();
         createBooks(books)
         
