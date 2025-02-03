@@ -145,13 +145,13 @@ function createBooks(books) {
   setupCanvas();
 }
 
-// const fetchBooksDebounced = _.debounce(async () => {
-//   await getBooksBooks();
-// }, 500);
+const fetchBooksDebounced = _.debounce(async () => {
+  await getBooks();
+}, 500);
 
 submitBtn.addEventListener("click", (e) => {
   e.preventDefault();
-//   fetchBooksDebounced();
+  fetchBooksDebounced();
 });
 
 submitBtn.addEventListener("click", async (e) => {
