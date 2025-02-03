@@ -1,0 +1,21 @@
+{
+  "name": "progetto_javascript_advanced_manuel_spoladore",
+  "version": "1.0.0",
+  "description": "Bookshelf Lab è una libreria interattiva che permette agli utenti di navigare, cercare e consultare il vasto catalogo di libri offerto da OpenLibrary. Con una semplice interfaccia utente, è possibile esplorare diverse categorie di libri, ottenere informazioni dettagliate e trovare ispirazione per le prossime letture.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "lodash": "^4.17.21"
+  }
+}
