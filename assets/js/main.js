@@ -7,18 +7,11 @@ let inputValue = "";
 
 async function getBooks() {
   try {
-    // console.log("Inizio richiesta Axios")
     const response = await axios.get(
       `https://openlibrary.org/subjects/` + `${inputValue}` + `.json`
     );
-    // if (!response.ok) {
-    //     throw new Error(`Errore HTTP! Status:${response.status}`);
-    // }
     return response.data.works;
 
-    // const books = await response.json();
-
-    // return books.works
   } catch (error) {
     console.error("Errore durante la richiesta", error);
     throw error;
@@ -28,12 +21,6 @@ async function getBooks() {
 async function getBookDetails(bookKey) {
   try {
     const response = await axios.get(`https://openlibrary.org${bookKey}.json`);
-    // if (!response.ok) {
-    //     throw new Error(`Errore HTTP! Status: ${response.status}`);
-    // }
-
-    // const bookDetails = await response.json();
-    // return bookDetails.description ? bookDetails.description : "Nessuna descrizione disponibile.";
     return response.data.description || "Nessuna descrizione disponibile.";
   } catch (error) {
     console.error("Errore durante il recupero della descrizione:", error);
@@ -45,8 +32,7 @@ function createBooks(books) {
   const booksContainer = document.getElementById("books-container");
   booksContainer.innerHTML = "";
 
-//   if (!books || books.length === 0) {
-    if (_.isEmpty(books)) {
+  if (_.isEmpty(books)) {
     const noBooksMessage = document.createElement("div");
     noBooksMessage.classList.add("no-books-container");
     noBooksMessage.textContent = "Purtroppo questa categoria non esiste";
@@ -84,7 +70,6 @@ function createBooks(books) {
 
     const author = document.createElement("h5");
     author.classList.add("author");
-    // author.textContent = item.authors?.[0]?.name || "Autore sconosciuto";
     author.textContent = _.get(item, "authors[0].name", "Autore sconosciuto");
 
     div.addEventListener("click", async () => {
@@ -158,7 +143,6 @@ submitBtn.addEventListener("click", async (e) => {
   e.preventDefault();
   try {
     const categoryBox = document.getElementById("category-box");
-    // inputValue = categoryBox.value.toLowerCase().trim().split(" ").join("_");
     inputValue = _.kebabCase(categoryBox.value);
     const books = await getBooks();
     createBooks(books);
